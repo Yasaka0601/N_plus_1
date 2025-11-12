@@ -1,16 +1,9 @@
-<p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Pokemons" %>
-
-<h1>Pokemons</h1>
-
-<div id="pokemons">
+<div class="pokemon-grid">
   <% @pokemons.each do |pokemon| %>
-    <%= render pokemon %>
-    <p>
-      <%= link_to "Show this pokemon", pokemon %>
-    </p>
+    <div class="pokemon-card">
+      <div class="pokemon-name"><%= pokemon.name %></div>
+      <div class="trainer-name"><%= pokemon.trainer.name %></div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New pokemon", new_pokemon_path %>

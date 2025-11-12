@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :pokemons
+  root "pokemons#index"
+  resources :pokemons, only: :index
   devise_for :trainers
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
