@@ -10,10 +10,13 @@ N + 1問題とはデータベースからデータを取得する際、ループ
 これだけ覚えて帰ってください。
 
 ## どんな時に発生するのか
+今回、私は登壇するにあたって、良い題材について探しました。
+
 「１対多」のアソシエーションの場合に発生します。
 ```mermaid
 erDiagram
   TRAINERS {
+    string name
     bigint id PK
     string email
     string encrypted_password
@@ -22,7 +25,6 @@ erDiagram
     datetime remember_created_at
     datetime created_at
     datetime updated_at
-    string name
   }
 
   POKEMONS {
@@ -35,3 +37,5 @@ erDiagram
 
   TRAINERS ||--o{ POKEMONS : "has many"
 ```
+
+<img width="442" height="335" alt="Image" src="https://github.com/user-attachments/assets/79c6a65a-97ea-4af2-96bc-d543ea2e4fff" />
